@@ -31,7 +31,7 @@ def SSD300(input_shape, num_classes=21):
     """
     net = {}
     # Block 1
-    input_tensor = input_tensor = Input(shape=input_shape)
+    input_tensor = Input(shape=input_shape)
     img_size = (input_shape[1], input_shape[0])
     net['input'] = input_tensor
     net['conv1_1'] = Convolution2D(64, 3, 3,

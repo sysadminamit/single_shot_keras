@@ -5,6 +5,7 @@ from keras.engine.topology import InputSpec
 from keras.engine.topology import Layer
 import numpy as np
 import tensorflow as tf
+import os
 
 
 class Normalize(Layer):
@@ -149,7 +150,7 @@ class PriorBox(Layer):
         centers_x, centers_y = np.meshgrid(linx, liny)
         centers_x = centers_x.reshape(-1, 1)
         centers_y = centers_y.reshape(-1, 1)
-        # define xmin, ymin, xmax, ymax of prior boxes
+        # define x_min, y_min, x_max, y_max of prior boxes
         num_priors_ = len(self.aspect_ratios)
         prior_boxes = np.concatenate((centers_x, centers_y), axis=1)
         prior_boxes = np.tile(prior_boxes, (1, 2 * num_priors_))
